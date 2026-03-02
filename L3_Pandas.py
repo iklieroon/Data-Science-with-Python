@@ -31,3 +31,23 @@ print(df.describe())
 
 data1=pd.read_csv('titanic.csv')
 #This is how to download CSV files 
+
+
+#HOMEWORK:
+
+print(data1.head())
+
+print(data1.shape)
+
+print(data1['Name'])
+
+print(data1['Age'].max())
+print(data1['Age'].min())
+
+print(type(data1['Age']))
+
+print(data1['Age'].shape)
+
+print(data1.info())
+
+print(data1.describe())
