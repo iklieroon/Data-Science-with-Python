@@ -30,3 +30,22 @@ print(data[['Age','Fare']].mean())
 #This is how to see the mean
 
 print(data.agg({'Age':['min','max','median'],'Fare':['min','max','median']}))
+
+print(data[['Sex','Age']].groupby('Sex').mean())
+print(data.groupby('Sex')['Age'].mean())
+#Get the mean ticket price for each sex and passenger class combination
+print(data.groupby(['Sex','Pclass'])['Fare'].mean())
+
+#We are trying to get the count of rows in each category
+print(data['Pclass'].value_counts())
+print(data.groupby('Pclass')['Pclass'].count())
+
+#Sorting the data
+data.sort_values(by='Age')
+print(data[['Name','Age']].head())
+data.sort_values(by=['Pclass','Age'],ascending=False)
+print(data.head())
+
+#Operations on text data
+data['name']=data['Name'].str.lower()
+print(data.head())
